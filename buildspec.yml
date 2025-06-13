@@ -7,9 +7,13 @@ phases:
     commands:
       - npm install -g @angular/cli
       - npm install
+
   build:
     commands:
       - ng build --configuration=production
+      - cp appspec.yml dist/
+      - mkdir -p dist/scripts
+      - cp scripts/install_dependencies.sh dist/scripts/
 
 artifacts:
   files:
